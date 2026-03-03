@@ -32,6 +32,7 @@ pipeline {
                     echo "Installing dependencies..."
                     dir("${REPO_DIR}") {
                         sh """
+                        pwd
                         mvn install
                         """
                     }
