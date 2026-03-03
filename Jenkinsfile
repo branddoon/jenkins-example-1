@@ -32,7 +32,6 @@ pipeline {
                     echo "Installing dependencies..."
                     dir("${REPO_DIR}") {
                         sh """
-                        pwd
                         mvn install
                         """
                     }
@@ -50,24 +49,6 @@ pipeline {
                     dir("${REPO_DIR}") {
                         sh """
                         mvn test
-                        """
-                    }
-                }
-            }
-        }
-
-        stage('Run Application') {
-            steps {
-                script {
-                    echo "Starting Spring boot application..."
-                    dir("${REPO_DIR}") {
-                        sh """
-                        if [ ! -d "logs" ]; then
-                            mkdir logs
-                        fi
-                        """
-                        sh """
-                        nohup java -jar target/jenkins-example-0.0.1-SNAPSHOT.jar > logs/app.out
                         """
                     }
                 }
