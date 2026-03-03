@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        REPO_URL = ""
+        REPO_URL = "https://github.com/branddoon/jenkins-example-1.git"
         REPO_DIR = "${WORKSPACE}/jenkins-example"
         BRANCH_NAME = "main"
         RUN_TESTS = "true"
@@ -16,7 +16,6 @@ pipeline {
                     sh """
                         if [ -d "${REPO_DIR}" ]; then
                             cd ${REPO_DIR}
-                            git reset --hard
                             git checkout ${BRANCH_NAME}
                             git pull origin ${BRANCH_NAME}
                         else
