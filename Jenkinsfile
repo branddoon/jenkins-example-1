@@ -67,7 +67,6 @@ pipeline {
                         fi
                         """
                         sh """
-                        mkdir logs
                         nohup java -jar target/jenkins-example-0.0.1-SNAPSHOT.jar > logs/app.out
                         """
                     }
