@@ -60,9 +60,10 @@ pipeline {
                 script {
                     echo "Starting Spring boot application..."
                     dir("${REPO_DIR}") {
-                        sh '''
+                        sh """
+                        pwd
                         java -jar jenkins-example-0.0.1-SNAPSHOT.jar
-                        '''
+                        """
                     }
                 }
             }
