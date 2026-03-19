@@ -1,4 +1,4 @@
-# Jenkins Example
+# Api in springboot with Jenkins configuration set up
 
 Demo project for a REST API built with Spring Boot, integrated with a Jenkins CI/CD pipeline.
 
